@@ -2,21 +2,23 @@ package com.zaga.PaymentService.Kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.ApplicationScope;
 
 import com.zaga.PaymentService.DTO.CreditCardDTO;
 import com.zaga.PaymentService.DTO.UPIDto;
 import com.zaga.PaymentService.Entity.PaymentDetails;
-
+@Service
 public class Producer {
     
-@Autowired
-PaymentDetails details;
+// @Autowired
+// PaymentDetails details;
 
-@Autowired
- CreditCardDTO dto;
+// @Autowired
+//  CreditCardDTO dto;
 
-     @Autowired
-    UPIDto dto2;
+//      @Autowired
+//     UPIDto dto2;
 
 private KafkaTemplate <String,CreditCardDTO> template ;
 private KafkaTemplate <String,UPIDto> template1 ;
@@ -24,7 +26,7 @@ private KafkaTemplate <String,Double> templete2 ;
 private KafkaTemplate <String,String> templete3 ;
 
 public void sendMsgTocreditCard(CreditCardDTO dto) {
-    System.out.println("------------->"+dto);
+    System.out.println("------------->     "+dto);
   this.template.send("payment-service", dto);
 
 }

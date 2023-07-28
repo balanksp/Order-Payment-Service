@@ -21,7 +21,6 @@ import lombok.ToString;
 @ApplicationScope
 @Document(collection = "PaymentDetails")
 public class PaymentDetails  {
-
     
     private String orderId;
     private String upi_id;
