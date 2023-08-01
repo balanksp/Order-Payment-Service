@@ -1,0 +1,13 @@
+{"properties": [{
+  "name": "spring.kafka.producer.template.value-serializer",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.kafka.producer.template.value-serializer'"
+}]}{"properties": [{
+  "name": "spring.kafka.producer.template1.value-serializer",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.kafka.producer.template1.value-serializer'"
+}]}{"properties": [{
+  "name": "spring.kafka.producer.template.value-serializer",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.kafka.producer.template.value-serializer'"
+}]}

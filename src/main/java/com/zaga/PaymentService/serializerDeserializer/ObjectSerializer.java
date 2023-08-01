@@ -12,7 +12,7 @@ import org.springframework.web.context.annotation.ApplicationScope;
 import com.zaga.PaymentService.DTO.CreditCardDTO;
 import com.zaga.PaymentService.Entity.PaymentDetails;
 
-@ApplicationScope
+// @ApplicationScope
 public class ObjectSerializer implements Serializer<CreditCardDTO> {
 
     @Override

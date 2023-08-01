@@ -16,5 +16,4 @@ public class MerchantBankAccount {
     private String bank_branch;
     private String ifsc_code;
     private Double bank_balance;
-
 }

@@ -9,15 +9,19 @@ import com.zaga.PaymentService.Entity.PaymentDetails;
 import com.zaga.PaymentService.Kafka.Producer;
 import com.zaga.PaymentService.Repo.PaymentDetailsRepo;
 import com.zaga.PaymentService.Service.PaymentDetailService;
+
 @Service
 public class PaymentDetailsImple implements PaymentDetailService {
 
     // @Autowired
     // CreditCardDTO dto;
 
-    
     @Autowired
     Producer producer;
+
+    @Autowired
+    Producer producer1;
+
 
     @Autowired
     PaymentDetailsRepo repo;
@@ -45,10 +49,12 @@ public class PaymentDetailsImple implements PaymentDetailService {
             producer.sendMsgToUPI(dto2);
         }
 
-        // Double orderAmount = details.getAmount();
-        // producer.send(orderAmount);
+        Double orderAmount = details.getAmount();
+        producer1.sendAmount(orderAmount);
 
-        System.out.println(details);
+        // String merchant_account_number = details.getMerchant_account_number();
+        // producer.sendMerchant_account_number(merchant_account_number);
+
         PaymentDetails paymentDetail = repo.save(details);
         return paymentDetail;
     }

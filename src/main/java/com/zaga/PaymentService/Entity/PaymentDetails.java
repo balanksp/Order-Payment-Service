@@ -31,5 +31,5 @@ public class PaymentDetails extends ObjectSerializer  {
     private String payment_type; 
     private String merchant_account_number ;
     private Long customer_id;
-    private String  name; 
+    private String  name;
 }

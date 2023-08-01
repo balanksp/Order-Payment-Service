@@ -29,8 +29,13 @@ public class Producer {
 private KafkaTemplate <String,CreditCardDTO> template ;
 
 private KafkaTemplate <String,UPIDto> template1 ;
-// private KafkaTemplate <String,Double> templete2 ;
-// private KafkaTemplate <String,String> templete3 ;
+
+@Autowired
+private KafkaTemplate <String,Double> templete2 ;
+
+@Autowired
+private KafkaTemplate <String,String> templete3 ;
+
 // private KafkaTemplate <String,CustomerBankAccount> templete4 ;
 
 public void sendMsgTocreditCard(CreditCardDTO dto) {
@@ -46,13 +51,13 @@ public void sendMsgToUPI(UPIDto dto2) {
 
 }
 
-// public void sendAmount(Double amount) {
-//     this.templete2.send("payment-service", amount);
-// }
+public void sendAmount(Double amount) {
+    this.templete2.send("sendAmount", amount);
+}
 
-// public void sendMerchant_account_number(String merchant_account_number){
-//     this.templete3.send("payment-service", merchant_account_number);
-// }
+public void sendMerchant_account_number(String merchant_account_number){
+    this.templete3.send("merchantAccount", merchant_account_number);
+}
     
 // public void balance_amount(CustomerBankAccount balance){
 //  this.templete4.send("balance", balance);
