@@ -9,7 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CostumerBankAccount {
+public class CustomerBankAccount {
     private String account_holder_name;
     private String merchant_account_number;
     private String bank_name;

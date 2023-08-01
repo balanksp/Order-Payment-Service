@@ -45,12 +45,10 @@ public class PaymentDetailsImple implements PaymentDetailService {
             producer.sendMsgToUPI(dto2);
         }
 
-        Double orderAmount = details.getAmount();
-        producer.sendAmount(orderAmount);
+        // Double orderAmount = details.getAmount();
+        // producer.send(orderAmount);
 
-        String merchant_Account_number = details.getMerchant_account_number();
-        producer.sendMerchant_account_number(merchant_Account_number);
-
+        System.out.println(details);
         PaymentDetails paymentDetail = repo.save(details);
         return paymentDetail;
     }

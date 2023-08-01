@@ -2,17 +2,11 @@ package com.zaga.PaymentService.Repo;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.zaga.PaymentService.DTO.EventDto;
-import com.zaga.PaymentService.Entity.CostumerBankAccount;
-import com.zaga.PaymentService.Entity.PaymentDetails;
+import com.zaga.PaymentService.Entity.CustomerBankAccount;
 
-public interface CustomerBankRepo extends MongoRepository<PaymentDetails,String>{
+public interface CustomerBankRepo extends MongoRepository<CustomerBankAccount,String>{
 
-    // public void balanceFetchUsingcard(EventDto dto){
-
-            
-    // }
-
+    // CustomerBankAccount findByCustomerAccountNumberAndAccountHolderName(String customerAccountNumber, String accountHolderName);
 
     
 }

@@ -2,6 +2,8 @@ package com.zaga.PaymentService.Entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.zaga.PaymentService.serializerDeserializer.ObjectSerializer;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Document(collection = "CreditCard")
-public class CreditCard {
+public class CreditCard extends ObjectSerializer{
     
     private String name;
     private String card_number;

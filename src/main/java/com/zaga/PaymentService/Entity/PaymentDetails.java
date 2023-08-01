@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.annotation.ApplicationScope;
 
 import com.zaga.PaymentService.Controller.PaymentDetailsController;
+import com.zaga.PaymentService.serializerDeserializer.ObjectSerializer;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,8 +21,7 @@ import lombok.ToString;
 @ToString
 @ApplicationScope
 @Document(collection = "PaymentDetails")
-public class PaymentDetails  {
-    
+public class PaymentDetails extends ObjectSerializer  {
     private String orderId;
     private String upi_id;
     private String cvv;
