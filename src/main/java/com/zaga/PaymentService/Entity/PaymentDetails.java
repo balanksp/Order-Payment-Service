@@ -22,7 +22,7 @@ import lombok.ToString;
 @ApplicationScope
 @Document(collection = "PaymentDetails")
 public class PaymentDetails extends ObjectSerializer  {
-    private String orderId;
+    // private String orderId;
     private String upi_id;
     private String cvv;
     private String expiry_date;

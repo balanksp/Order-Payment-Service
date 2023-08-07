@@ -16,11 +16,11 @@ public class PaymentDetailsImple implements PaymentDetailService {
     // @Autowired
     // CreditCardDTO dto;
 
-    @Autowired
-    Producer producer;
+    // @Autowired
+    // Producer producer;
 
-    @Autowired
-    Producer producer1;
+    // @Autowired
+    // Producer producer1;
 
 
     @Autowired
@@ -37,7 +37,8 @@ public class PaymentDetailsImple implements PaymentDetailService {
             dto.setName(details.getName());
             dto.setCvv(details.getCvv());
             dto.setExpiry_date(details.getExpiry_date());
-            producer.sendMsgTocreditCard(dto);
+            System.out.println(dto);
+            // producer.sendMsgTocreditCard(dto);
         }
 
         if (details.getPayment_type().equalsIgnoreCase("UPI Payment")) {
@@ -46,13 +47,16 @@ public class PaymentDetailsImple implements PaymentDetailService {
             UPIDto dto2 = new UPIDto();
             dto2.setName(details.getName());
             dto2.setUpi_id(details.getUpi_id());
-            producer.sendMsgToUPI(dto2);
+            System.out.println(dto2);
+            // producer.sendMsgToUPI(dto2);
         }
 
         Double orderAmount = details.getAmount();
-        producer1.sendAmount(orderAmount);
+        System.out.println(orderAmount);
+        // producer1.sendAmount(orderAmount);
 
-        // String merchant_account_number = details.getMerchant_account_number();
+        String merchant_account_number = details.getMerchant_account_number();
+        System.out.println(merchant_account_number);
         // producer.sendMerchant_account_number(merchant_account_number);
 
         PaymentDetails paymentDetail = repo.save(details);
