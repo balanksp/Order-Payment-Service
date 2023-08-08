@@ -34,6 +34,10 @@ public class CustomerBankService {
 
 }
 
+  public CustomerBankAccount createBankAccount(CustomerBankAccount customer){
+     
+    return repo.save(customer);
+  }
 
 
 }

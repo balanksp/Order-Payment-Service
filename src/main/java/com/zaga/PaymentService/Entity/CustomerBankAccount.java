@@ -19,6 +19,7 @@ public class CustomerBankAccount {
     private String bank_name;
     private String bank_branch;
     private String ifsc_code;
+    
      @Field("bank_balance")
     private Double bank_balance;
 
