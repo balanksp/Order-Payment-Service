@@ -25,8 +25,8 @@ public class UPIController {
     }
     
     @GetMapping("/verify-upi-account")
-    public void getUpiDetails(@RequestParam UPIDto dto){
-         service.verifyAccount(dto);
+    public void getUpiDetails( UPIDto dto){
+          service.verifyAccount(dto);
     }
 
     @GetMapping("/get-upi-account")
