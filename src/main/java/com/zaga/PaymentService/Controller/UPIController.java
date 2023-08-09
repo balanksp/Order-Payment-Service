@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,6 +37,9 @@ public class UPIController {
         return accountNumber.getCustomer_account_number();
     }
 
-
+  @GetMapping("/list-all-details")
+  public List<UPI> getListAllUPIDetails(){
+    return service.getAllDetails();
+  }
 
 }

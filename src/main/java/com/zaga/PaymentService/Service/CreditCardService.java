@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.zaga.PaymentService.DTO.CreditCardDTO;
@@ -16,4 +18,5 @@ public interface CreditCardService {
 
     public CreditCard getCustomerAccountNumber(String card_number, String name);
 
+public List<CreditCard> findAllDetails();
 }

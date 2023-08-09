@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,6 @@ public interface UPIService {
     public UPI getUpiAccountNumber(String upi_id,String name);
 
     
-
+  public List<UPI> getAllDetails();
     
 }

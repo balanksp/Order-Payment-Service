@@ -17,8 +17,8 @@ import lombok.ToString;
 @Document(collection = "CreditCard")
 public class CreditCard {
 
-    @Id
-    private String id;
+    // @Id
+    // private String id;
     private String card_number;
     private String name;
     private String expiry_date; 

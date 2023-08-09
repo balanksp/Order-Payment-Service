@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.ServiceImplementation;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +40,11 @@ UPIRepo repo;
         
                 UPI upi = repo.findByIdAndName(upi_id, name);
                 return upi;
+    }
+
+    @Override
+    public List<UPI> getAllDetails() {
+              return repo.findAll();
     }
     
 }

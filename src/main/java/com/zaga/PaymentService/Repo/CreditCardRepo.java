@@ -1,6 +1,8 @@
 package com.zaga.PaymentService.Repo;
 
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
@@ -18,5 +20,7 @@ public interface CreditCardRepo extends MongoRepository<CreditCard,String> {
   @Query("{'card_number': ?0, 'name': ?1}")
   public CreditCard findByCardNumberAndName(String card_number, String name);
 
+   
+   
 
   }

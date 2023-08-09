@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,13 +33,16 @@ public class CustomerBankService {
         CustomerBankAccount customerAccount = new CustomerBankAccount();
         customerAccount.setBank_balance(newBalance);
         System.out.println("Amount of "+customerOrderAmount+" is debited from your account. New balance is " + newBalance);
-
 }
 
   public CustomerBankAccount createBankAccount(CustomerBankAccount customer){
      
     return repo.save(customer);
+    
   }
 
+  public List<CustomerBankAccount> getAllDetails(){
+    return repo.findAll();
+  }
 
 }

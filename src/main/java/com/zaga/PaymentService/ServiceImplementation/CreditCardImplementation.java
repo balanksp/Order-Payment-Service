@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.ServiceImplementation;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +48,10 @@ public class CreditCardImplementation implements CreditCardService {
     public CreditCard getCustomerAccountNumber(String card_number, String name){
         CreditCard creditCard = repo.findByCardNumberAndName(card_number, name);
           return creditCard;
+    }
+
+    public List<CreditCard> findAllDetails(){
+        return repo.findAll();
     }
 
     }

@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,9 @@ public class MerchantBankService {
       purchaseAmount = customerOrderAmount;      
    }
 
+   public List<MerchantBankAccount> getAllDetails(){
+     return repo.findAll();
+   }
 
 }
 

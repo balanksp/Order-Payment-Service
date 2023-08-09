@@ -1,5 +1,7 @@
 package com.zaga.PaymentService.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,6 +45,10 @@ public class CreditcardController {
 
     }
 
+    @GetMapping("/list-all-credit_details")
+    public List<CreditCard> listAllCreditDetails(){
+        return service.findAllDetails();
+    }
 
 
 
