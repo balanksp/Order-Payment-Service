@@ -12,17 +12,33 @@ public class MerchantBankService {
     @Autowired
     MerchantBankRepo repo;
 
-    public MerchantBankAccount viewMerchantBalance(String merchantAccount)
+    private Double purchaseAmount;
+    private Double newBalance;
+
+    public Double viewMerchantBalance(String merchant_account_number, String account_holder_name) 
 {
-     MerchantBankAccount MerchantBalance = repo.getMerchantBankBalance(merchantAccount);
+     MerchantBankAccount MerchantBalance = repo.getMerchantBankBalance(account_holder_name, account_holder_name);
        Double bankBalance = MerchantBalance.getBank_balance();
        System.out.println(bankBalance);
-       return MerchantBalance;
+       return bankBalance;
 
 }
+
    public MerchantBankAccount  createMerchantAccount(MerchantBankAccount account){
-      return  repo.save(account);
+      return repo.save(account);
+   }
+
+   public void creditAmount(Double accountBalance){
+      newBalance = accountBalance + purchaseAmount;
+      MerchantBankAccount merchantAccount = new MerchantBankAccount();
+      merchantAccount.setBank_balance(newBalance);
+      System.out.println("Amount of" +purchaseAmount +"is credited to your account. New balance is "+newBalance);
+   }
+
+   public void orderAmount(Double customerOrderAmount){
+      purchaseAmount = customerOrderAmount;      
    }
 
 
 }
+

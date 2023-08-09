@@ -1,12 +1,8 @@
 package com.zaga.PaymentService.Entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.annotation.ApplicationScope;
 
-import com.zaga.PaymentService.Controller.PaymentDetailsController;
 import com.zaga.PaymentService.serializerDeserializer.ObjectSerializer;
 
 import lombok.AllArgsConstructor;

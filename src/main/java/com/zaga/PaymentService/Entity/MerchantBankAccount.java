@@ -1,6 +1,7 @@
 package com.zaga.PaymentService.Entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,5 +19,7 @@ public class MerchantBankAccount {
     private String bank_name;
     private String bank_branch;
     private String ifsc_code;
+    
+      @Field("bank_balance")
     private Double bank_balance;
 }

@@ -4,16 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zaga.PaymentService.Entity.MerchantBankAccount;
 import com.zaga.PaymentService.Service.MerchantBankService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 
 @RestController
-@RequestMapping("/MerchantBankDetails")
+@RequestMapping("/merchantBankDetails")
 public class MerchantBankAccountController {
     
     @Autowired
@@ -25,7 +27,10 @@ public class MerchantBankAccountController {
         return ResponseEntity.ok(service.createMerchantAccount(merchantAccount)) ;                 
     }
      
-    // @GetMapping("/fetchMerchantBankBalance")
+    @GetMapping("/fetchMerchantBankBalance")
+    public ResponseEntity<Double> getMerchantBankBalance(@RequestParam String merchant_account_number , @RequestParam String account_holder_name) {
+        return ResponseEntity.ok(service.viewMerchantBalance(merchant_account_number, account_holder_name));
+    }
 
 
 
